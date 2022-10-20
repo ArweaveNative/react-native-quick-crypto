@@ -1,0 +1,23 @@
+import { Buffer } from '@craftzdog/react-native-buffer';
+export declare type BinaryLike = string | ArrayBuffer | Buffer;
+export declare type BinaryToTextEncoding = 'base64' | 'base64url' | 'hex' | 'binary';
+export declare type CharacterEncoding = 'utf8' | 'utf-8' | 'utf16le' | 'latin1';
+export declare type LegacyCharacterEncoding = 'ascii' | 'binary' | 'ucs2' | 'ucs-2';
+export declare type Encoding = BinaryToTextEncoding | CharacterEncoding | LegacyCharacterEncoding;
+export declare type CipherEncoding = Encoding | 'buffer';
+export declare function setDefaultEncoding(encoding: CipherEncoding): void;
+export declare function getDefaultEncoding(): CipherEncoding;
+export declare const kEmptyObject: any;
+export declare function toArrayBuffer(buf: Buffer): ArrayBuffer;
+export declare function binaryLikeToArrayBuffer(input: BinaryLike, encoding?: string): ArrayBuffer;
+export declare function ab2str(buf: ArrayBuffer, encoding?: string): string;
+export declare function validateString(str: any, name?: string): str is string;
+export declare function validateFunction(f: any): f is Function;
+export declare function isStringOrBuffer(val: any): val is string | ArrayBuffer;
+export declare function validateObject<T>(value: any, name: string, options?: {
+    allowArray: boolean;
+    allowFunction: boolean;
+    nullable: boolean;
+} | null): value is T;
+export declare function validateInt32(value: any, name: string, min?: number, max?: number): void;
+export declare function validateUint32(value: number, name: string, positive?: boolean): void;
